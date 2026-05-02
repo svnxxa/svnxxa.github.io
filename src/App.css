@@ -1,0 +1,220 @@
+/* FONT & CORE SETUP */
+*, *::before, *::after {
+  font-family: "Jersey 10", sans-serif !important;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  overflow: hidden; /* Keeps the arcade vibe tight */
+}
+
+.app-container {
+  color: #fff;
+  min-height: 100vh;
+  padding: 40px;
+  background: radial-gradient(circle, #222 0%, #000 100%);
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.navbar button {
+  background: #000;
+  color: #00ff00;
+  border: 4px solid #00ff00;
+  padding: 5px 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background: #00ff00;
+  color: #000;
+}
+
+/* CONTENT VIEWPORT */
+.viewport {
+  FLEX-GROW: 1;
+  padding-top: 50px; /* SPACE FOR NAVBAR */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* WINDOWS */
+.window {
+  border: 6px solid #fff;
+  background: #111;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  color: #ff00ff;
+  text-align: center;
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* HOME SCREEN LAYOUT */
+.home-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.hero-area {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* CHARACTER & CAT SIZES */
+.sprite-me {
+  width: 100px; /* BIGGER SIZE */
+  image-rendering: pixelated;
+}
+
+.sprite-cat-big {
+  width: 200px; /* BIGGER FOR SECRET PAGE */
+  image-rendering: pixelated;
+  margin-bottom: 0px;
+}
+
+/* PIXEL SPEECH BUBBLE */
+.pixel-bubble {
+  position: relative;
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  font-size: 1.4rem;
+  /* Thick black pixel borders */
+  border: 4px solid #000;
+  box-shadow: 
+    4px 0 0 0 #000, 
+    -4px 0 0 0 #000, 
+    0 4px 0 0 #000, 
+    0 -4px 0 0 #000;
+}
+
+/* The bubble tail */
+.pixel-bubble::after {
+  content: "";
+  position: absolute;
+  left: -17px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-left: 4px solid #000;
+  border-bottom: 4px solid #000;
+  transform: rotate(45deg) translateY(-50%);
+}
+
+.pixel-folder {
+  border: 4px solid white;
+  background: #222;
+  padding: 20px;
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* PROJECT FOLDERS */
+.folder-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* This makes them move to a new line if the screen is small */
+}
+
+.pixel-folder:hover {
+  background: #444; /* Glows slightly when you hover */
+}
+
+/* CONTENT WINDOWS */
+.window {
+  border: 6px solid #fff;
+  background: #111;
+  padding: 30px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.title {
+  color: #ff00ff;
+  text-align: center;
+  margin-top: 0;
+}
+
+.start-btn {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  background: #00ffff;
+  color: #000;
+  border: 4px solid #fff;
+  cursor: pointer;
+}
+
+.start-btn:hover {
+  background: #fff;
+  color: #00ffff;
+}
+
+/* CAT POPUP TRIGGER */
+.cat-trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  cursor: pointer;
+  z-index: 100;
+  text-align: center;
+}
+
+.cat-trigger img {
+  width: 50px; /* POPUP SIZE */
+  margin-bottom: -5px;
+  image-rendering: pixelated;
+}
+
+.click-me {
+  /* background: whitesmoke; */
+  color: white;
+  font-size: 0.8rem;
+  padding: 1px;
+}
+
+.secret-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* This keeps everything bunched in the center */
+  height: auto;           /* Changed from 90vh to auto to stop stretching */
+  gap: 10px;              /* Reduced gap between cat, window, and button */
+  padding-top: 20px;
+}
+
+/* Adjust the window specifically inside the secret screen */
+.secret-screen .window {
+  margin: 10px 0;         /* Tightens space above and below the box */
+  padding: 15px;          /* Makes the box a bit more compact */
+}
