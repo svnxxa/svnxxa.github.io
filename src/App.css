@@ -165,8 +165,10 @@ body {
 }
 
 .start-btn {
-  margin-top: 20px;
-  padding: 15px 30px;
+  /* margin-top: 20px;
+  padding: 10px 20px; */
+  width: 200px;
+  padding: 7px;
   font-size: 1.5rem;
   background: #00ffff;
   color: #000;
@@ -191,7 +193,7 @@ body {
 }
 
 .cat-trigger img {
-  width: 50px; /* POPUP SIZE */
+  width: 30px; /* POPUP SIZE */
   margin-bottom: -5px;
   image-rendering: pixelated;
 }
@@ -217,4 +219,41 @@ body {
 .secret-screen .window {
   margin: 10px 0;         /* Tightens space above and below the box */
   padding: 15px;          /* Makes the box a bit more compact */
+}
+
+/* SOCIAL MEDIA LINKS */
+.contact-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* The Tooltip Box */
+.contact-link::after {
+  content: attr(data-label); /* Pulls the text from the data-label attribute */
+  position: absolute;
+  bottom: -40px;             /* Positions it below the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #00ff00;            /* Arcade Green */
+  border: 2px solid #00ff00;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  white-space: nowrap;       /* Prevents the text from wrapping */
+  opacity: 0;                /* Hidden by default */
+  pointer-events: none;      /* Prevents the tooltip from blocking clicks */
+  transition: opacity 0.2s;
+  z-index: 1000;
+  font-size: 1.2rem;
+}
+
+/* Show the tooltip on hover */
+.contact-link:hover::after {
+  opacity: 1;
+}
+
+.contact-icon {
+  width: 35px;
+  image-rendering: pixelated;
 }

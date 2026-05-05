@@ -3,6 +3,9 @@ import './App.css'
 // Replace these filenames with your actual filenames
 import myAvatar from './assets/me.png' 
 import catIcon from './assets/cat.png' 
+import emailIcon from './assets/email_icon.png'
+import githubIcon from './assets/github_icon_bg.png'
+import linkedinIcon from './assets/linkedin_icon_bg.png'
 
 function App() {
   const [screen, setScreen] = useState('home');
@@ -48,20 +51,72 @@ function App() {
                 <p>Welcome to my portfolio!</p>
               </div>
             </div>
-            <button className="start-btn" onClick={() => setScreen('projects')}>
-              VIEW QUESTS
-            </button>
+            <div style={{ height: '30px' }}></div> {/* Spacer */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px'}}>
+              <button className="start-btn" onClick={() => setScreen('bio')}>
+                LEARN MORE
+              </button>
+              <button className="start-btn" onClick={() => setScreen('projects')}>
+                VIEW ARCHIVE
+              </button>
+            </div>
+            <div style={{ height: '30px' }}></div> {/* Spacer */}
+            <div style={{ display: 'flex',gap: '10px'}} className="social-dock">
+              <a 
+                href="mailto:schoi26@student.ubc.ca" 
+                data-label="schoi26@student.ubc.ca" 
+                className="contact-link"
+              >
+                <img src={emailIcon} alt="Email" className="contact-icon" />
+              </a>
+              
+              <a 
+                href="https://github.com/svnxxa" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                data-label="github.com/svnxxa" 
+                className="contact-link"
+              >
+                <img src={githubIcon} alt="GitHub" className="contact-icon" />
+              </a>
+
+              <a 
+                href="https://www.linkedin.com/in/sungha-choi-4235212b8/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                data-label="https://www.linkedin.com/in/sungha-choi-4235212b8/" 
+                className="contact-link"
+              >
+                <img src={linkedinIcon} alt="LinkedIn" className="contact-icon" />
+              </a>
+            </div>
           </div>
         )}
 
         {/* --- BIO --- */}
         {screen === 'bio' && (
           <div className="window">
-            <h2 className="title">CHARACTER STATS</h2>
-            <div className="content">
-              <p style={{ fontSize: '22px' }}>NAME: SUNGHA</p>
-              <p style={{ fontSize: '22px' }}>CLASS: STATS & DSCI</p>
-              <p style={{ fontSize: '22px' }}>BIO: Currently building pixel-art worlds in React.</p>
+            <h2 className="title">ABOUT ME</h2>
+            <div className="content" style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+              
+              <p style={{ fontSize: '20px', margin: 0 }}>
+                I’m a fourth-year Statistics student at UBC with a minor in Data Science. 
+                I enjoy working with data, from cleaning and exploration to building models 
+                and visualizing insights that help answer real-world questions.
+              </p>
+
+              <p style={{ fontSize: '20px', margin: 0 }}>
+                Through projects in predictive and inferential analysis, I’ve developed 
+                experience with Python and R, and learned how to approach problems 
+                critically when results aren’t always straightforward.
+              </p>
+
+              <p style={{ fontSize: '20px', margin: 0 }}>
+                Beyond technical work, I value clear communication and collaboration, 
+                which I developed through customer-facing roles and team projects. 
+                I’m currently interested in opportunities in data analytics and applied data science.
+              </p>
+              
             </div>
           </div>
         )}
@@ -69,18 +124,18 @@ function App() {
         {/* --- SCREEN: PROJECTS --- */}
         {screen === 'projects' && (
           <div className="project-page">
-            <h2 className="title">QUEST LOG</h2>
+            <h2 className="title">PROJECT REPOSITORY</h2>
             <div className="folder-container">
               {/* Box 1 */}
               <div className="pixel-folder" onClick={() => alert("Details for Project 1")}>
                 <div className="folder-icon">📂</div>
-                <p>Stochastic Prep</p>
+                <p>Project 1</p>
               </div>
 
               {/* Box 2 */}
               <div className="pixel-folder" onClick={() => alert("Details for Project 2")}>
                 <div className="folder-icon">📂</div>
-                <p>Optimization</p>
+                <p>Project 2</p>
               </div>
             </div>
           </div>
