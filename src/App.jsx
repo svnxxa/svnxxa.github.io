@@ -3,9 +3,11 @@ import './App.css'
 // Replace these filenames with your actual filenames
 import myAvatar from './assets/me.png' 
 import catIcon from './assets/cat.png' 
+import catPic from './assets/cat_pic.png'
 import emailIcon from './assets/email_icon.png'
 import githubIcon from './assets/github_icon_bg.png'
 import linkedinIcon from './assets/linkedin_icon_bg.png'
+import resumeIcon from './assets/resume_icon.png'
 
 function App() {
   const [screen, setScreen] = useState('home');
@@ -89,6 +91,16 @@ function App() {
               >
                 <img src={linkedinIcon} alt="LinkedIn" className="contact-icon" />
               </a>
+
+              <a 
+                href="/Sungha_Choi_Resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                data-label="View Resume" 
+                className="contact-link"
+              >
+                <img src={resumeIcon} alt="Resume" className="contact-icon" />
+              </a>
             </div>
           </div>
         )}
@@ -147,7 +159,7 @@ function App() {
       {screen === 'secret-cat' && (
         <div className="secret-screen">
           <h2 className="title">SECRET CAT FOUND!</h2>
-          <img src={catIcon} className="sprite-cat-big" alt="Secret Cat" />
+          <img src={catPic} className="sprite-cat-big" alt="Secret Cat" />
           <div className="window">
             <p style={{ fontSize: '22px' }}>This is my cat's profile.<br></br>
             Name: Chunsam <br></br>
@@ -158,7 +170,7 @@ function App() {
         </div>
       )}
 
-      {/* RANDOM CAT POPUP: Only show if showCat is true AND we aren't on the secret page */}
+{/* RANDOM CAT POPUP: Only show if showCat is true AND we aren't on the secret page */}
 {showCat && screen !== 'secret-cat' && (
   <div 
     className="cat-trigger" 
