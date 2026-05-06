@@ -9,10 +9,105 @@ import githubIcon from './assets/github_icon_bg.png'
 import linkedinIcon from './assets/linkedin_icon_bg.png'
 import resumeIcon from './assets/resume_icon.png'
 
+const projectsData = [
+  {
+    id: "idea-lab",
+    title: "IDEA Lab Research Assistant",
+    category: "Research",
+    date: "May 2025 - Present",
+    desc: "Supporting interdisciplinary aging research at UBC. Analyzing sensor data from therapeutic cycling and qualitative data for social robot engagement.",
+    tech: ["Biostatistics", "Qualitative Analysis", "Social Robots"],
+    link: "#"
+  },
+   {
+    id: "portfolio",
+    title: "Arcade Portfolio Website",
+    category: "Software",
+    date: "Apr 2026 - Present",
+    desc: "The site you are seeing now! Designed a pixel-art interface with state-driven UI, custom CSS animations, and randomized easter eggs.",
+    tech: ["React", "Vite", "CSS3", "JavaScript"],
+    link: "https://github.com/svnxxa/svnxxa.github.io"
+  },
+  {
+    id: "airbnb",
+    title: "NYC Airbnb Popularity Prediction",
+    category: "Data Science",
+    date: "Sep - Dec 2025",
+    desc: "Built a Gradient Boosting ML model to forecast listing popularity for 48,000+ listings. Achieved 1.412 RMSE, outperforming linear baselines.",
+    tech: ["Python", "Scikit-Learn", "GridSearchCV", "Seaborn"],
+    link: "https://github.com/svnxxa/cpsc330-hw5" 
+  },
+  {
+    id: "furminder",
+    title: "Fur-minder (HackCamp Hackathon)",
+    category: "Software",
+    date: "Nov 2024",
+    desc: "Designed an 11.5-hour hackathon project focused on mental health. Led the Figma design process and collaborated with Unity developers to create a task-based pet simulator.",
+    tech: ["Figma", "Unity", "C#", "UI/UX"],
+    link: "https://devpost.com/software/fur-minder?_gl=1*ktmvoe*_gcl_au*MTgxNTE4NTg4Ni4xNzc4MDI4NTc0*_ga*NDY5NzA2NjYzLjE3NzgwMjg1NzU.*_ga_0YHJK3Y10M*czE3NzgwMjg1NzQkbzEkZzEkdDE3NzgwMjg3MjgkajQ2JGwwJGgw"
+  },
+  {
+    id: "flexfield",
+    title: "FlexField Fitness (Bolt Datathon)",
+    category: "Data Science",
+    date: "Oct 2024",
+    desc: "Analyzed partnership viability using OLS regression. Provided statistical evidence to optimize product offerings and mitigate brand loyalty risks for a fitness brand.",
+    tech: ["Python", "Statsmodels", "Regression", "Pandas"],
+    link: "https://github.com/svnxxa/BOLT-First-Byte-Datathon"
+  },
+  {
+    id: "friender",
+    title: "Friender Project (ASA DataFest)",
+    category: "Data Science",
+    date: "Mar 2024",
+    desc: "🏆 Awarded 'Most Creative'. Conducted deep-dive EDA in R to solve student engagement issues and proposed a platform-wide inbox feature to improve academic outcomes.",
+    tech: ["R", "Jupyter", "EDA", "UX Research"],
+    link: "https://github.com/svnxxa/DataFest-2024"
+  },  
+  {
+    id: "lasso",
+    title: "Song Streaming Predictive Analysis",
+    category: "Data Science",
+    date: "Aug 2024",
+    desc: "Applied Lasso regression to identify song attributes influencing stream counts. Automated data retrieval via Kaggle API.",
+    tech: ["Python", "Lasso Regression", "Kaggle API", "Pandas"],
+    link: "https://github.com/svnxxa/music-streamed-analysis"
+  },
+  {
+    id: "bakery",
+    title: "Java Bakery Ordering System",
+    category: "Software",
+    date: "Jul - Aug 2024",
+    desc: "Designed a Java-based ordering system with a focus on Object-Oriented Design and TDD. Achieved 100% code coverage using JUnit and implemented data persistence with JSON.",
+    tech: ["Java", "Swing", "JUnit", "JSON"],
+    link: "https://github.com/svnxxa/cpsc210-bakery-system"
+  },
+  {
+  id: "stats-society",
+  title: "Undergraduate Statistics Society",
+  category: "Experience",
+  date: "Jul 2025 - Present",
+  desc: "Internal Director. Planning academic events, teaching statistical concepts in workshops, and managing student outreach.",
+  tech: ["Leadership", "Teaching", "Event Planning"],
+  link: "#" 
+},
+{
+  id: "hmart",
+  title: "Sales Associate / Cashier - H Mart",
+  category: "Experience",
+  date: "Jun 2025 - Present",
+  desc: "Managing high-volume transactions and inventory in a fast-paced environment. Delivering professional customer service.",
+  tech: ["Customer Service", "Inventory Management", "Time Management"],
+  link: "#" 
+}
+];
+
 function App() {
   const [screen, setScreen] = useState('home');
   const [showCat, setShowCat] = useState(false);
   const [catPos, setCatPos] = useState({ top: '80%', left: '80%' });
+  const [filter, setFilter] = useState('All');
+  const [openProject, setOpenProject] = useState(null);
 
   // EASTER EGG LOGIC: Spawns the cat at a random spot
   useEffect(() => {
@@ -136,19 +231,52 @@ function App() {
         {/* --- SCREEN: PROJECTS --- */}
         {screen === 'projects' && (
           <div className="project-page">
-            <h2 className="title">PROJECT REPOSITORY</h2>
-            <div className="folder-container">
-              {/* Box 1 */}
-              <div className="pixel-folder" onClick={() => alert("Details for Project 1")}>
-                <div className="folder-icon">📂</div>
-                <p>Project 1</p>
-              </div>
+            <h2 className="title">PROJECT ARCHIVE</h2>
+            
+            {/* FILTER TABS */}
+            <div className="filter-system">
+              {['All', 'Data Science', 'Software', 'Research', 'Experience'].map(cat => (
+                <button 
+                  key={cat}
+                  onClick={() => {setFilter(cat); setOpenProject(null);}}
+                  className={`filter-btn ${filter === cat ? 'active' : ''}`}
+                >
+                  {cat.toUpperCase()}
+                </button>
+              ))}
+            </div>
 
-              {/* Box 2 */}
-              <div className="pixel-folder" onClick={() => alert("Details for Project 2")}>
-                <div className="folder-icon">📂</div>
-                <p>Project 2</p>
-              </div>
+            {/* ACCORDION LIST */}
+            <div className="accordion-container">
+              {projectsData
+                .filter(p => filter === 'All' || p.category === filter)
+                .map(project => (
+                  <div key={project.id} className={`project-card ${openProject === project.id ? 'open' : ''}`}>
+                    <div 
+                      className="project-header" 
+                      onClick={() => setOpenProject(openProject === project.id ? null : project.id)}
+                    >
+                      <span className="project-id-tag">[{project.category.substring(0,2).toUpperCase()}]</span>
+                      <span className="project-title-text">{project.title}</span>
+                      <span className="project-arrow">{openProject === project.id ? '▲' : '▼'}</span>
+                    </div>
+                    
+                    {openProject === project.id && (
+                      <div className="project-body">
+                        <p className="project-date">{project.date}</p>
+                        <p className="project-desc">{project.desc}</p>
+                        <div className="tech-tags">
+                          {project.tech.map(t => <span key={t} className="tag">{t}</span>)}
+                        </div>
+                        {project.link && project.link !== "#" && (
+                          <a href={project.link} target="_blank" rel="noreferrer" className="repo-link">
+                            GO TO REPOSITORY →
+                          </a>
+                        )}
+                      </div>
+                    )}
+                  </div>
+              ))}
             </div>
           </div>
         )}
@@ -181,7 +309,7 @@ function App() {
       // setShowCat(false); 
 
       // Option B: Move him to a corner:
-      setCatPos({ top: '90%', left: '2%' }); 
+      setCatPos({ top: '92%', left: '4%' }); 
     }}
   >
     <img src={catIcon} alt="Secret Cat" />

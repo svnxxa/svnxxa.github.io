@@ -55,3 +55,4 @@ npm run deploy
 ## TODO
 * Update projects
 * Make a better background
+* Update more info about my cat!
