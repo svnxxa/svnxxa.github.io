@@ -178,10 +178,10 @@ function App() {
               </a>
 
               <a 
-                href="https://www.linkedin.com/in/sungha-choi-4235212b8/" 
+                href="https://www.linkedin.com/in/sungha-choi/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                data-label="https://www.linkedin.com/in/sungha-choi-4235212b8/" 
+                data-label="https://www.linkedin.com/in/sungha-choi/" 
                 className="contact-link"
               >
                 <img src={linkedinIcon} alt="LinkedIn" className="contact-icon" />
