@@ -16,7 +16,7 @@ const projectsData = [
     category: "Experience",
     date: "Sep 2026 - Present",
     desc: "Providing face-to-face technical support and Canvas troubleshooting for Applied Science faculty. Training and supporting instructors on educational tools: iClicker, iPeer, Turnitin, WeBWorK, and Camtasia. Analyzing, documenting, and tracking technical issues systematically, escalating complex problems to higher-level support unitslike the LT Hub and IT Service Centre.",
-    tech: ["Troubleshooting, Canvas"],
+    tech: ["Troubleshooting", "Problem Solving", "Canvas"],
     link: "#"
   },
   {
