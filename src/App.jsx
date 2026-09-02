@@ -15,16 +15,16 @@ const projectsData = [
     title: "Learning Technology Rover",
     category: "Experience",
     date: "Sep 2026 - Present",
-    desc: "To be added",
-    tech: [""],
+    desc: "Providing face-to-face technical support and Canvas troubleshooting for Applied Science faculty. Training and supporting instructors on educational tools: iClicker, iPeer, Turnitin, WeBWorK, and Camtasia. Analyzing, documenting, and tracking technical issues systematically, escalating complex problems to higher-level support unitslike the LT Hub and IT Service Centre.",
+    tech: ["Troubleshooting, Canvas"],
     link: "#"
   },
   {
     id: "idea-lab",
     title: "IDEA Lab Research Assistant",
     category: "Research",
-    date: "May 2025 - Present",
-    desc: "Supporting interdisciplinary aging research at UBC. Analyzing sensor data from therapeutic cycling and qualitative data for social robot engagement.",
+    date: "May 2025 - Aug 2026",
+    desc: "Supported interdisciplinary aging research at UBC. Analyzed sensor data from therapeutic cycling and qualitative data for social robot engagement.",
     tech: ["Biostatistics", "Qualitative Analysis", "Social Robots"],
     link: "#"
   },
@@ -32,7 +32,7 @@ const projectsData = [
     id: "portfolio",
     title: "Arcade Portfolio Website",
     category: "Software",
-    date: "Apr 2026 - Present",
+    date: "Apr - Jun 2026",
     desc: "The site you are seeing now! Designed a pixel-art interface with state-driven UI, custom CSS animations, and randomized easter eggs.",
     tech: ["React", "Vite", "CSS3", "JavaScript"],
     link: "https://github.com/svnxxa/svnxxa.github.io"
@@ -104,8 +104,8 @@ const projectsData = [
   id: "hmart",
   title: "Sales Associate / Cashier - H Mart",
   category: "Experience",
-  date: "Jun 2025 - Present",
-  desc: "Managing high-volume transactions and inventory in a fast-paced environment. Delivering professional customer service.",
+  date: "Jun 2025 - Aug 2026",
+  desc: "Managed high-volume transactions and inventory in a fast-paced environment. Delivered professional customer service.",
   tech: ["Customer Service", "Inventory Management", "Time Management"],
   link: "#" 
 }
