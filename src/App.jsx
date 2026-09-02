@@ -11,6 +11,15 @@ import resumeIcon from './assets/resume_icon.png'
 
 const projectsData = [
   {
+    id: "LTR",
+    title: "Learning Technology Rover",
+    category: "Experience",
+    date: "Sep 2026 - Present",
+    desc: "To be added",
+    tech: [""],
+    link: "#"
+  },
+  {
     id: "idea-lab",
     title: "IDEA Lab Research Assistant",
     category: "Research",
