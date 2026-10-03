@@ -11,6 +11,15 @@ import resumeIcon from './assets/resume_icon.png'
 
 const projectsData = [
   {
+    id: "never-get-rejected",
+    title: "Interactive Web Application - Never Get Rejected",
+    category: "Software",
+    date: "Sep - Oct 2026",
+    desc: "Built a multi-step React form wizard using state hooks to handle conditional view routing and input validation. Coded a cursor-evading UI algorithm mapping cursor coordinates against boundary boxes for translation. Created a free serverless pipeline using a custom Google Apps Script REST API to save data to a spreadsheet. Refactored repetitive layout architecture into dynamic loops using array mapping to cut codebase clutter",
+    tech: ["React", "Vite", "JavaScript (ES6+)", "Google Apps Script", "CSS3"],
+    link: "https://github.com/svnxxa/never-get-rejected"
+  },
+  {
     id: "LTR",
     title: "Learning Technology Rover",
     category: "Experience",
@@ -273,7 +282,19 @@ function App() {
                     {openProject === project.id && (
                       <div className="project-body">
                         <p className="project-date">{project.date}</p>
-                        <p className="project-desc">{project.desc}</p>
+                        {/* <p className="project-desc">{project.desc}</p> */}
+                        {/* UPDATED: Split description string by period */}
+                        <ul className="project-desc">
+                          {(Array.isArray(project.desc) ? project.desc : project.desc.split('. '))
+                            .filter(sentence => sentence.trim() !== '')
+                            .map((bullet, idx) => (
+                              <li key={idx}>
+                                {bullet.endsWith('.') ? bullet : `${bullet}.`}
+                              </li>
+                            ))}
+                        </ul>
+
+
                         <div className="tech-tags">
                           {project.tech.map(t => <span key={t} className="tag">{t}</span>)}
                         </div>

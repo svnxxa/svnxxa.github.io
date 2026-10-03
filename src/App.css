@@ -362,6 +362,8 @@ body {
 .project-desc {
   font-size: 1.2rem;
   line-height: 1.4;
+  text-align: left;
+  list-style-position: outside;
 }
 
 .tech-tags {
