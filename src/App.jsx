@@ -3,7 +3,7 @@ import './App.css'
 // Replace these filenames with your actual filenames
 import myAvatar from './assets/me.png' 
 import catIcon from './assets/cat.png' 
-import catPic from './assets/cat_pic.png'
+import catPic from './assets/cat_pic.jpeg'
 import emailIcon from './assets/email_icon.png'
 import githubIcon from './assets/github_icon_bg.png'
 import linkedinIcon from './assets/linkedin_icon_bg.png'
@@ -318,6 +318,7 @@ function App() {
         <div className="secret-screen">
           <h2 className="title">SECRET CAT FOUND!</h2>
           <img src={catPic} className="sprite-cat-big" alt="Secret Cat" />
+          {/* <img src={`${import.meta.env.BASE_URL}cat.png`} alt="Secret Cat" /> */}
           <div className="window">
             <p style={{ fontSize: '22px' }}>This is my cat's profile.<br></br>
             Name: Chunsam <br></br>

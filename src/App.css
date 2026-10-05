@@ -118,7 +118,7 @@ body {
 }
 
 .sprite-cat-big {
-  width: 270px; /* BIGGER FOR SECRET PAGE */
+  width: 300px; /* BIGGER FOR SECRET PAGE */
   image-rendering: pixelated;
   margin-bottom: 0px;
 }
